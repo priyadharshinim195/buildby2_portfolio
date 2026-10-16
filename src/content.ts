@@ -202,11 +202,20 @@ export const ABOUT = {
     'Our team brings together designers, directors and developers who collaborate closely from first sketch to final frame.',
   ],
 };
-
+export const WHATSAPP = {
+  // Country code + number, no + or spaces
+  number: '917448944820',
+  message:
+    "Hi! I found your work on builtbytw2 Studio and I'd like to discuss a project. Could you share more about your services and availability?",
+};
 export const SOCIALS = [
   { label: 'Instagram', href: 'https://instagram.com/' },
   { label: 'LinkedIn', href: 'https://linkedin.com/' },
   { label: 'GitHub', href: 'https://github.com/' },
+  {
+    label: 'Whatsapp',
+    href: `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.message)}`,
+  },
 ];
 
 export function getProject(id: string): Project | undefined {

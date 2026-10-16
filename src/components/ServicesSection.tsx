@@ -58,7 +58,7 @@ export function ServicesSection() {
     <section id="services" className="section services" ref={ref}>
       <header className="section__head" data-reveal>
         <p className="eyebrow">Services</p>
-        <h2 className="display section__title">What I Do.</h2>
+        <h2 className="display section__title">What We Do.</h2>
         <p className="section__lede">
           From concept to deployment, I build digital solutions that work beautifully and scale
           intelligently.
