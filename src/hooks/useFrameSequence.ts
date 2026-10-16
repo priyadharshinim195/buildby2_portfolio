@@ -29,18 +29,20 @@ export function useFrameSequence(canvasRef: RefObject<HTMLCanvasElement>): void 
     let current: HTMLImageElement | undefined;
 
     /** Draws an image with "cover" fit: uniform scale, centred, never stretched. */
-    const paint = (img: HTMLImageElement) => {
+        const paint = (img: HTMLImageElement) => {
       if (!img.naturalWidth) return;
       const cw = canvas.width;
       const ch = canvas.height;
       const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
       const w = img.naturalWidth * scale;
       const h = img.naturalHeight * scale;
-      ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+      const focus = window.matchMedia('(max-width: 600px)').matches
+        ? HERO.mobileFocusX
+        : HERO.focusX;
+      ctx.drawImage(img, (cw - w) * focus, (ch - h) / 2, w, h);
       current = img;
       canvas.dataset.ready = 'true';
     };
-
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
       const rect = canvas.getBoundingClientRect();

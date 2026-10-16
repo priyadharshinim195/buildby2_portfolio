@@ -1307,3 +1307,95 @@ ul {
     transition: none;
   }
 }
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 600px) {
+  :root {
+    --pad: 20px;
+  }
+
+  .section {
+    padding-top: 48px;
+  }
+
+  .section__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .hero__lede {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .contact__email {
+    font-size: 1.4rem;
+  }
+
+  .socials {
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* ---------- Hero on mobile ---------- */
+/* ---------- Hero on mobile: horizontal (16:9) video on top ---------- */
+@media (max-width: 600px) {
+  .hero {
+    height: auto;
+    min-height: 0;
+    display: block;
+    background: var(--charcoal);
+  }
+
+  .hero__media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero__veil {
+    display: none;
+  }
+
+  .hero__content {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    max-width: none;
+    padding: 28px var(--pad) 72px;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .hero__lede {
+    margin-top: 16px;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+
+  .scroll-cue {
+    bottom: 16px;
+  }
+}
